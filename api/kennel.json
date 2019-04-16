@@ -1,0 +1,60 @@
+{
+  "candyTypes": [
+      {
+          "id": 1,
+          "name": "Strewberry"
+      },
+      {
+          "id": 2,
+          "name": "Lemon"
+      },
+      {
+          "id": 3,
+          "name": "Watermolon"
+      },
+      {
+        "id": 4,
+        "name": "Chocolate"
+    }
+  ],
+  "candiesFromAPI":[
+      {
+          "id": 1,
+          "name": "Riesen",
+          "candyTypes": 1
+      },
+      {
+          "id": 2,
+          "name": "SweetTarrs",
+          "candyTypes": 2
+      },
+      {
+          "id": 3,
+          "name": "Baby Ruth",
+          "candyTypes": 3
+      },
+      {
+          "id": 4,
+          "name": "Skittle",
+          "candyTypes": 4
+      }
+  ],
+  "employeeFromAPI": [
+      {
+          "id": 1,
+          "name": "Ali Abdulle"
+       },
+      {
+          "id": 2,
+           "name": "David Higs"
+          },
+      {
+          "id": 3,
+          "name": "Amy Anderson"
+      },
+      {
+          "id": 4,
+          "name": "Ali Jr"
+      }
+  ]
+}
