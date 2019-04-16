@@ -34,14 +34,9 @@
       "candyTypes": 3
     },
     {
-        "id": 4,
-        "name": "Bob Marley",
-        "candyTypes": 3
-    },
-    {
-        "id": 5,
-        "name": "lamber Lub",
-        "candyTypes": 1
+      "id": 4,
+      "name": "Bob Marley",
+      "candyTypes": 3
     }
   ],
   "employeeFromAPI": [
