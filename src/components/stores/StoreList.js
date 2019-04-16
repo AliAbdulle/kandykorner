@@ -1,10 +1,10 @@
 import React, {Component} from "react"
 
-class storeList extends Component {
+class StoreList extends Component {
     render() {
         return (
             <section className = "Container">
-            <h1>Stores</h1>
+            <h1>Locations</h1>
             {
                 this.props.stores.map(store =>
                     <div key={store.id}>
@@ -17,4 +17,4 @@ class storeList extends Component {
     }
 
 }
-export default storeList
+export default StoreList

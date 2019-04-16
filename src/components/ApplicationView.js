@@ -6,33 +6,44 @@ import CandiesList from "./candies/CandiesList"
 
 
 class ApplicationView extends Component {
-    candyTypes =[
-        {id: 1, name: "Strewberry"},
-        {id: 2, name: "Lemon"},
-        {id: 3, name: "Watermolon"}
-    ]
-    candiesFromAPI =[
-        {id: 1, name: "Riesen", candyTypeId: 1 },
-        {id: 2, name: "SweetTarrs", candyTypeId: 2 },
-        {id: 3, name: "Baby Ruth", candyTypeId: 3 },
-        {id: 4, name: "Skittle", candyTypeId: 3 }
-    ]
-    employeeFromAPI = [
-        {id: 1, name: "Ali Abdulle" },
-        {id: 2, name: "David Higs" },
-        {id: 3, name: "Amy Anderson" },
-        {id: 4, name: "Ali Jr" }
-    ]
-    storesFromAPI = [
-        {id: 1, name: "Apple Store" },
-        {id: 2, name: "Free Market" }
-    ]
 
     state = {
-        candyTypes: this.candyTypes,
-        candies: this.candiesFromAPI,
-        employees: this.employeeFromAPI,
-        stores: this.storesFromAPI
+        candyTypes: [],
+        candies: [],
+        employees: [],
+        stores: []
+    }
+
+    componentDidMount() {
+
+        const newState = {}
+                fetch("http://localhost:5002/candyTypes")
+                .then(r => r.json())
+                .then(() => fetch("http://localhost:5002/candiesFromAPI"))
+                .then(r => r.json())
+                .then(candies => newState.candies = candies)
+                .then(candyTypes => newState.candyTypes = candyTypes)
+                .then(() => fetch("http://localhost:5002/employeeFromAPI"))
+                .then(r => r.json())
+                .then(employees =>  newState.employees = employees)
+                .then(() => fetch("http://localhost:5002/storesFromAPI"))
+                .then(r => r.json())
+                .then(stores => newState.stores = stores)
+                .then(() => this.setState(newState))
+    }
+
+    deleteCandy = id => {
+
+        return fetch(`http://localhost:5002/candiesFromAPI/${id}`, {
+            method: "DELETE"
+        })
+        .then(r => r.json())
+        .then(() => fetch(`http://localhost:5002/candiesFromAPI`))
+        .then(r => r.json())
+        .then(candies => this.setState({
+            candies: candies
+        }))
+
     }
 
     render(){
@@ -44,7 +55,7 @@ class ApplicationView extends Component {
                 return <EmployeeList employees={this.state.employees} />
             }} />
                 <Route path="/candies" render={(props) =>{
-                return <CandiesList candies={this.state.candies}
+                return <CandiesList deleteCandy={this.deleteCandy}candies={this.state.candies}
                 candyTypes={this.state.candyTypes}  />
             }} />
         </React.Fragment>
