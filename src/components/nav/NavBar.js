@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 class NavBar extends Component {
-    rander() {
+    render() {
         return (
             <nav className="nav nav-holder">
                 <ul className="nav-ul">

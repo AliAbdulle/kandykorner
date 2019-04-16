@@ -2,7 +2,7 @@ import {Route} from 'react-router-dom'
 import React, {Component} from "react";
 import StoreList from "./stores/StoreList"
 import EmployeeList from  "./employees/EmployeeList"
-import CandiesList from "./candies/CandieList"
+import CandiesList from "./candies/CandiesList"
 
 
 class ApplicationView extends Component {
@@ -12,10 +12,10 @@ class ApplicationView extends Component {
         {id: 3, name: "Watermolon"}
     ]
     candiesFromAPI =[
-        {id: 1, name: "Riesen", candyTypes: 1 },
-        {id: 2, name: "SweetTarrs", candyTypes: 2 },
-        {id: 3, name: "Baby Ruth", candyTypes: 3 },
-        {id: 4, name: "Skittle", candyTypes: 3 }
+        {id: 1, name: "Riesen", candyTypeId: 1 },
+        {id: 2, name: "SweetTarrs", candyTypeId: 2 },
+        {id: 3, name: "Baby Ruth", candyTypeId: 3 },
+        {id: 4, name: "Skittle", candyTypeId: 3 }
     ]
     employeeFromAPI = [
         {id: 1, name: "Ali Abdulle" },
@@ -35,7 +35,7 @@ class ApplicationView extends Component {
         stores: this.storesFromAPI
     }
 
-    rander(){
+    render(){
         return( <React.Fragment>
                 <Route exact path="/" render={(props) =>{
                 return <StoreList stores={this.state.stores} />
@@ -43,8 +43,9 @@ class ApplicationView extends Component {
                 <Route exact path="/employees" render={(props) =>{
                 return <EmployeeList employees={this.state.employees} />
             }} />
-                <Route exact path="/condies" render={(props) =>{
-                return <CandiesList candies={this.state.candies} />
+                <Route path="/candies" render={(props) =>{
+                return <CandiesList candies={this.state.candies}
+                candyTypes={this.state.candyTypes}  />
             }} />
         </React.Fragment>
         )

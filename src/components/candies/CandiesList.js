@@ -9,6 +9,10 @@ class CandiesList extends Component {
                 this.props.candies.map(candy =>
                     <div key={candy.id}>
                     {candy.name}
+                    {" "} -- {" "}
+                    {
+                        this.props.candyTypes.find(candyTypes => candyTypes.id === candy.candyTypeId).name
+                    }
                     </div>
                     )
             }
