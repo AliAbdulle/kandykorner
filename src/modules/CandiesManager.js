@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:5002/candiesFromAPI"
+const apiURL = "http://localhost:5002"
 
 export default {
     get(id) {
