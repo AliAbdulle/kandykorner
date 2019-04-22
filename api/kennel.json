@@ -17,7 +17,7 @@
       "name": "Chocolate"
     }
   ],
-  "candiesFromAPI": [
+  "candies": [
     {
       "id": 1,
       "name": "Riesen",
@@ -32,14 +32,9 @@
       "id": 3,
       "name": "Baby Ruth",
       "candyTypes": 3
-    },
-    {
-      "id": 4,
-      "name": "Coco Mango",
-      "candyTypes": 3
     }
   ],
-  "employeeFromAPI": [
+  "employees": [
     {
       "id": 1,
       "name": "Ali Abdulle"
@@ -59,6 +54,18 @@
     {
       "id": 4,
       "name": "Ali Jr"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "500 Circle Way"
+    },
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "address": "10101 Binary Court"
     }
   ]
 }

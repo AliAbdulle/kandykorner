@@ -1,4 +1,4 @@
-const apiURL = "http://localhost:5002/employeeFromAPI"
+const apiURL = "http://localhost:5002"
 
 export default {
     get(id) {
@@ -6,6 +6,6 @@ export default {
     },
 
     getAll() {
-        return fetch(apiURL).then(r => r.json())
+        return fetch(`${apiURL}/employees`).then(r => r.json())
     }
 }
